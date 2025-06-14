@@ -8,26 +8,32 @@
 </head>
 
 <body>
-    <form action="">
+    <form id="form">
         <h1 style="color:red">WEBSITE</h1>
         <label for="email">Email:</label>
-        <input type="text" placeholder="enter the email" required>
+        <input id="email" type="text" placeholder="enter the email" required>
         <br><br>
         <label for="password">Password:</label>
-        <input type="password" placeholder="Enter the password" required maxlength="8">
+        <input  id="password" type="password" placeholder="Enter the password" required maxlength="8">
         <br><br>
-        <label for="feedback">Feedback:</label>
-        <textarea name="feedback" id="feedback" placeholder="Enter your feedback" required maxlength="150"></textarea>
+        
         <br><br>
-        <label for="gender">Gender:</label>
-        <select name="gender" id="gender">
-            <option value="">select</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
+    
         <br><br>
-        <button style="color:blue;"> summit </button>
+        <button style="color:blue;" type="summit"> summit </button>
     </form>
+    <script>
+        document.getElementById("form").addEventListener("submit",function(e){
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log(email,password)
+        document.getElementById("result1").textContent=email
+        document.getElementById("result2").textContent=password
+        })
+        
+        
+    </script>
 </body>
 
 </html>
